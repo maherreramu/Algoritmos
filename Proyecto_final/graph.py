@@ -1,4 +1,5 @@
 import networkx as nx
+import scipy as sp
 from data import df_dist, df_time
 
 def t_to_d(t):
@@ -19,5 +20,11 @@ for i in cities:
 
 G.add_edges_from(edges1)
 G.add_edges_from(edges2)
+
+g = nx.path_graph(G, create_using=nx.DiGraph())
+#Matriz de adyacencia del grafo - no esoy seguro si está bien
+A = nx.adjacency_matrix(g)
+
+print(A.todense())
 
 #print(G.get_edge_data('Bucaramanga', 'Pasto'))
