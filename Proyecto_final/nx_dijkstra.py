@@ -16,4 +16,11 @@ def nx_dijkstra(st, end, mode):
                 for i in range(0, len(path)-1):
                     G.get_edge_data(cities[i], cities[i+1])[mode]
                     
+            if mode == 'time':
+                m = data%60
+                h = (data-m)/60
+                data = h+":"+m
+
             return (path, data)
+
+nx_dijkstra('Cali', 'Bucaramanga', 'dist')
