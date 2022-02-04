@@ -25,6 +25,6 @@ g = nx.path_graph(G, create_using=nx.DiGraph())
 #Matriz de adyacencia del grafo - no esoy seguro si está bien
 A = nx.adjacency_matrix(g)
 
-print(A.todense())
+#print(A.todense())
 
 #print(G.get_edge_data('Bucaramanga', 'Pasto'))
