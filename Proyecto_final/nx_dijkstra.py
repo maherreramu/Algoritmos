@@ -14,13 +14,13 @@ def nx_dijkstra(st, end, mode):
                 data = G.get_edge_data(cities[0], cities[1])[mode]
             else:
                 for i in range(0, len(path)-1):
-                    G.get_edge_data(cities[i], cities[i+1])[mode]
-                    
+                    data += G.get_edge_data(cities[i], cities[i+1])[mode]
+
             if mode == 'time':
-                m = data%60
-                h = (data-m)/60
+                m = str(data%60)
+                h = str(int(data/60))
                 data = h+":"+m
 
             return (path, data)
 
-nx_dijkstra('Cali', 'Bucaramanga', 'dist')
+#print(nx_dijkstra('Cali', 'Bucaramanga', 'time'))
